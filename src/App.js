@@ -9,7 +9,7 @@ import Resources from './components/Resources'
 
 function App() {
   return (
-    <Router>
+    <Router basename='/Nav-App'>
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
