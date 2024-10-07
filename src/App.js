@@ -6,6 +6,7 @@ import DiningOptions from './components/DiningOptions'; // Import your Dining Op
 import Faq from './components/Faq'; // Import your FAQ component
 import Resources from './components/Resources'
 
+console.log('Current environment:', process.env.NODE_ENV);
 
 function App() {
   return (

@@ -22,7 +22,7 @@ import Layout from "./layout";
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ma
             </Typography>
           </Box>
-          <Box position="absolute" top={211} left={53} width={293} height={430} sx={{ backgroundImage: 'url(/static/img/frame-2.png)', backgroundSize: 'cover', backgroundPosition: 'center', overflow: 'scroll' }} />
+          <Box position="absolute" top={211} left={53} width={293} height={430} sx={{ backgroundImage: `url(${process.env.PUBLIC_URL}/static/img/frame-2.png)`, backgroundSize: 'cover', backgroundPosition: 'center', overflow: 'scroll' }} />
           <Box position="absolute" top={669} left={59}>
             <Typography variant="body1" component="div" sx={{ fontFamily: 'Roboto', fontWeight: 'normal', color: 'black' }}>
               For more information, check out the Hospitality website.
