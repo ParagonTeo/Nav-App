@@ -52,7 +52,7 @@ export const HomeScreen = () => {
             top={64}
             left={0}
             sx={{
-              backgroundImage: 'url(./static/img/rectangle-2.png)',
+              backgroundImage: `url(${process.env.PUBLIC_URL}/static/img/rectangle-2.png)`,
               backgroundSize: 'cover',
               backgroundPosition: '50% 50%',
             }}
@@ -117,7 +117,7 @@ export const HomeScreen = () => {
             <Box
               flex={1}
               sx={{
-                backgroundImage: 'url(/static/img/item-1.png)',
+                backgroundImage: `url(${process.env.PUBLIC_URL}/static/img/item-1.png)`,
                 backgroundSize: 'cover',
                 backgroundPosition: '50% 50%',
                 borderRadius: 28,
@@ -126,7 +126,7 @@ export const HomeScreen = () => {
             <Box
               width={56}
               sx={{
-                backgroundImage: 'url(/static/img/item-last.png)',
+                backgroundImage: `url(${process.env.PUBLIC_URL}/static/img/item-last.png)`,
                 backgroundSize: 'cover',
                 backgroundPosition: '50% 50%',
                 borderRadius: 28,

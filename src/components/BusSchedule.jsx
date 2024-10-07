@@ -19,7 +19,7 @@ const BusSchedule = () => {
             width={315}
             height={318}
             sx={{
-              backgroundImage: 'url(/static/img/frame-3.png)',
+              backgroundImage: `url(${process.env.PUBLIC_URL}/static/img/frame-3.png)`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               overflow: 'scroll',

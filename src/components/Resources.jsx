@@ -29,7 +29,7 @@ const Resources = () => {
               <CardMedia
                 component="img"
                 height="140"
-                image="/static/img/rectangle-7.png"
+                image={`${process.env.PUBLIC_URL}/static/img/rectangle-7.png`}
                 alt="Bus Schedule"
               />
             </Card>
@@ -42,7 +42,7 @@ const Resources = () => {
               <CardMedia
                 component="img"
                 height="140"
-                image="/static/img/rectangle-8.png"
+                image={`${process.env.PUBLIC_URL}/static/img/rectangle-8.png`}
                 alt="Dining Options"
               />
             </Card>
@@ -55,7 +55,7 @@ const Resources = () => {
               <CardMedia
                 component="img"
                 height="140"
-                image="/static/img/rectangle-9.png"
+                image={`${process.env.PUBLIC_URL}/static/img/rectangle-9.png`}
                 alt="Frequently Asked"
               />
             </Card>
