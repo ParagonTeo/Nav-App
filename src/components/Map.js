@@ -4,7 +4,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
 import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css';
 
-const mapboxToken = process.env.REACT_APP_MAPBOX_TOKEN;
+const mapboxToken = 'pk.eyJ1IjoidGFubmVyb3dlbnMyMyIsImEiOiJjbTFpZGp1bW4wcGQxMmtwc3NmcDhoaGFnIn0.xGzAWEofvML7fSWb22kq1g'
 
 const containerStyle = {
   width: '100vw',
@@ -53,6 +53,7 @@ function Map() {
       style: 'mapbox://styles/mapbox/streets-v10',
       center: [userLocation.lng, userLocation.lat], // Center map on user location
       zoom: 14,
+      accessToken: mapboxToken
     });
 
     // Set the map bounds to the TTU campus area
