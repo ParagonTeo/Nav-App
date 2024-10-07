@@ -4,7 +4,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
 import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css';
 
-mapboxgl.accessToken = 'pk.eyJ1IjoidGFubmVyb3dlbnMyMyIsImEiOiJjbTFpZGp1bW4wcGQxMmtwc3NmcDhoaGFnIn0.xGzAWEofvML7fSWb22kq1g';
+const mapboxToken = process.env.REACT_APP_MAPBOX_TOKEN;
 
 const containerStyle = {
   width: '100vw',
