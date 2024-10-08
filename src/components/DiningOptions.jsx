@@ -1,31 +1,32 @@
 import React from "react";
-import { Box, Typography, IconButton, BottomNavigation, BottomNavigationAction } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import ExploreIcon from "@mui/icons-material/Explore";
-import BookmarkIcon from "@mui/icons-material/Bookmark";
-import BookIcon from "@mui/icons-material/Book";
+import { Box, Typography } from "@mui/material";
 import Layout from "./layout";
 
- const DiningOptions = () => {
+const DiningOptions = () => {
   return (
     <Layout>
-      <Box display="flex" justifyContent="center" width="100%" bgcolor="white">
-        <Box width={393} height={852} position="relative" bgcolor="white">
-          <Box position="absolute" top={103} left={59}>
-            <Typography variant="h4" component="div" sx={{ fontFamily: 'Roboto', fontWeight: 'normal', color: 'black' }}>
+      <Box display="flex" justifyContent="center" width="100vw">
+        <Box bgcolor="white">
+          <Box >
+            <Typography variant="h5" component="div" sx={{ fontFamily: 'Roboto', fontWeight: 'normal', color: 'black' }}>
               Dining Options
             </Typography>
           </Box>
-          <Box position="absolute" top={157} left={59}>
+          <Box sx={{ mt: '20px', mb: '15px' }}>
             <Typography variant="body1" component="div" sx={{ fontFamily: 'Roboto', fontWeight: 'normal', color: 'black' }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ma
+              Explore various dining options available on campus.
             </Typography>
           </Box>
-          <Box position="absolute" top={211} left={53} width={293} height={430} sx={{ backgroundImage: `url(${process.env.PUBLIC_URL}/static/img/frame-2.png)`, backgroundSize: 'cover', backgroundPosition: 'center', overflow: 'scroll' }} />
-          <Box position="absolute" top={669} left={59}>
-            <Typography variant="body1" component="div" sx={{ fontFamily: 'Roboto', fontWeight: 'normal', color: 'black' }}>
+          <Box height={'60vh'} sx={{ backgroundImage: `url(${process.env.PUBLIC_URL}/static/img/frame-2.png)`, backgroundSize: 'cover', backgroundPosition: 'center', overflow: 'scroll' }} />
+          <Box >
+            <Typography variant="body1" component="div" sx={{ fontFamily: 'Roboto', fontWeight: 'normal', color: 'black', mt: '20px' }}>
               For more information, check out the Hospitality website.
+            </Typography>
+            <Typography
+              variant="body1"
+              component="p"
+              sx={{ fontFamily: 'Roboto', fontWeight: 'normal', color: 'grey' }}>
+              https://www.depts.ttu.edu/hospitality/
             </Typography>
           </Box>
         </Box>
