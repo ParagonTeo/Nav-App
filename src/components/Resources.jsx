@@ -1,11 +1,5 @@
 import React from "react";
-import { Box, Typography, BottomNavigation, BottomNavigationAction, Paper, AppBar, Toolbar, IconButton, Container, Card, CardMedia, CardContent } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import BookOpen from "@mui/icons-material/Book";
-import ExploreIcon from "@mui/icons-material/Explore";
-import BookmarkIcon from "@mui/icons-material/Bookmark";
-import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
+import { Box, Typography, Container, Card, CardMedia, CardContent } from "@mui/material";
 import Layout from "./layout";
 import { useNavigate } from 'react-router-dom';
 
