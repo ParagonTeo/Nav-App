@@ -1,5 +1,6 @@
+// src/components/Layout.jsx
 import React from 'react';
-import { Box, AppBar, Toolbar, IconButton, Typography, BottomNavigation, BottomNavigationAction, Drawer, List, ListItem, ListItemText } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Typography, BottomNavigation, BottomNavigationAction, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import ExploreIcon from '@mui/icons-material/Explore';
@@ -41,12 +42,12 @@ const Layout = ({ children }) => {
     };
 
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', overflow: 'hidden' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
             {/* Drawer for the Menu */}
             <Drawer anchor="left" open={menuOpen} onClose={toggleMenu}>
                 <List>
                     <ListItem button onClick={() => navigate("/")}>
-                        <ListItemText primary="Home" />
+                         <ListItemText primary="Home" />
                     </ListItem>
                     <ListItem button onClick={() => navigate("/profile")}>
                         <ListItemText primary="Profile" />
@@ -69,7 +70,7 @@ const Layout = ({ children }) => {
                 </List>
             </Drawer>
 
-            {/* App Bar */}
+            {/* App Bar  appbar color='default', icons='inherit'*/}
             <AppBar position="static" sx={{ backgroundColor: 'white', boxShadow: 'none' }}>
                 <Toolbar>
                     <IconButton onClick={toggleMenu}>
@@ -86,23 +87,16 @@ const Layout = ({ children }) => {
             </AppBar>
 
             {/* Main Content */}
-            <Box sx={{ flexGrow: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', width: '100%' }}>
+            <div style={{ flexGrow: 1, padding: '16px' }}>
                 {children}
-            </Box>
+            </div>
 
             {/* Bottom Navigation */}
             <BottomNavigation
                 value={navValue}
                 onChange={handleNavChange}
                 showLabels
-                sx={{
-                    backgroundColor: 'white',
-                    width: '100vw',
-                    position: 'fixed',  // Fixed positioning
-                    bottom: 0,  // Stick to the bottom
-                    left: 0,    // Ensure full width
-                    right: 0
-                }}
+                sx={{ backgroundColor: 'white', display: 'flex', width: '100vw' }}
             >
                 <BottomNavigationAction
                     label="Explore"
@@ -126,7 +120,7 @@ const Layout = ({ children }) => {
                     }}
                 />
             </BottomNavigation>
-        </Box>
+        </div>
     );
 };
 

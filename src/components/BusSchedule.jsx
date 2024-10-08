@@ -1,27 +1,23 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import ExploreIcon from "@mui/icons-material/Explore";
+import BookmarkIcon from "@mui/icons-material/Bookmark";
+import BookIcon from "@mui/icons-material/Book";
+import { Box, Typography, IconButton, BottomNavigation, BottomNavigationAction } from "@mui/material";
 import Layout from "./layout";
 
 const BusSchedule = () => {
   return (
     <Layout>
-      <Box display="flex" flexDirection="column" justifyContent="center" width="100vw" alignItems={"center"} alignContent={"center"}>
-        <Box position="relative" gap={20}>
-          <Typography
-            variant="h5"
-            component="div"
-            mb={'20px'}
-            //top={99}
-            //left={42}
-            sx={{ fontFamily: 'Roboto', fontWeight: 'normal' }}
-          >
-            Bus Schedule
-          </Typography>
+      <Box display="flex" justifyContent="center" width="100%" bgcolor="white">
+        <Box width={393} height={852} position="relative" overflow="hidden">
           <Box
-            //top={170}
-            //left={42}
-            width={'50vw'}
-            height={'50vh'}
+            position="absolute"
+            top={170}
+            left={42}
+            width={315}
+            height={318}
             sx={{
               backgroundImage: `url(${process.env.PUBLIC_URL}/static/img/frame-3.png)`,
               backgroundSize: 'cover',
@@ -32,9 +28,29 @@ const BusSchedule = () => {
           <Typography
             variant="h6"
             component="div"
-            //stop={523}
-            //left={51}
-            mt={'20px'}
+            position="absolute"
+            top={99}
+            left={42}
+            sx={{ fontFamily: 'Roboto', fontWeight: 'normal' }}
+          >
+            Bus Schedule
+          </Typography>
+          <Typography
+            variant="body1"
+            component="p"
+            position="absolute"
+            top={684}
+            left={56}
+            sx={{ fontFamily: 'Roboto', fontWeight: 'normal' }}
+          >
+            For more information, check out the Citibus website.
+          </Typography>
+          <Typography
+            variant="h6"
+            component="div"
+            position="absolute"
+            top={523}
+            left={51}
             sx={{ fontFamily: 'Roboto', fontWeight: 'normal' }}
           >
             Operation hours
@@ -42,30 +58,13 @@ const BusSchedule = () => {
           <Typography
             variant="body1"
             component="div"
-            //top={570}
-            //left={56}
+            position="absolute"
+            top={570}
+            left={56}
             sx={{ fontFamily: 'Roboto', fontWeight: 'normal' }}
           >
             Days and times
           </Typography>
-
-          <Typography
-            variant="body1"
-            component="p"
-            //top={684}
-            //left={56}
-            mt={'20px'}
-            sx={{ fontFamily: 'Roboto', fontWeight: 'normal' }}
-          >
-            For more information, check out the Citibus website.
-          </Typography>
-          <Typography
-            variant="body1"
-            component="p"
-            sx={{ fontFamily: 'Roboto', fontWeight: 'normal', color: 'grey' }}
-          > https://citibus.com/maps-and-schedules/
-          </Typography>
-
         </Box>
       </Box>
     </Layout>
