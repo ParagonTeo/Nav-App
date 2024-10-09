@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Nav-App/static/css/main.913c2bd9.css",
-    "main.js": "/Nav-App/static/js/main.20ffc3e9.js",
+    "main.js": "/Nav-App/static/js/main.6eccf38e.js",
     "static/js/453.ad6eb26e.chunk.js": "/Nav-App/static/js/453.ad6eb26e.chunk.js",
     "index.html": "/Nav-App/index.html",
     "main.913c2bd9.css.map": "/Nav-App/static/css/main.913c2bd9.css.map",
-    "main.20ffc3e9.js.map": "/Nav-App/static/js/main.20ffc3e9.js.map",
+    "main.6eccf38e.js.map": "/Nav-App/static/js/main.6eccf38e.js.map",
     "453.ad6eb26e.chunk.js.map": "/Nav-App/static/js/453.ad6eb26e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.913c2bd9.css",
-    "static/js/main.20ffc3e9.js"
+    "static/js/main.6eccf38e.js"
   ]
 }
