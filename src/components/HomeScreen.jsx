@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Typography, IconButton, InputBase, Paper } from "@mui/material";
+import { Box, Typography, AppBar, Toolbar, IconButton, InputBase, Paper, BottomNavigation, BottomNavigationAction, Drawer, List, ListItem, ListItemText, Button } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { useNavigate } from "react-router-dom";
 import Layout from "./layout";
@@ -14,13 +14,8 @@ export const HomeScreen = () => {
 
   const navigate = useNavigate();
 
-  // Handle search focus
-  const handleSearchFocus = () => {
-    setSearchFocus(true);
-  };
-
-  const handleSearchBlur = () => {
-    setSearchFocus(false);
+  const goToMap = () => {
+    navigate('/map'); // Assuming your map route is '/map'
   };
 
   // Handle menu toggle
@@ -36,19 +31,19 @@ export const HomeScreen = () => {
 
   return (
     <Layout>
-      <Box display="flex" justifyContent="center" width="100vw" alignItems={"center"} alignContent={"center"}>
-        <Box bgcolor="white" >
-          { /*Drawer for menu was here*/}
-          <Box
-            width={393}
-            height={'50vh'}
-            sx={{
-              backgroundImage: `url(${process.env.PUBLIC_URL}/static/img/rectangle-2.png)`,
-              backgroundSize: 'cover',
-              backgroundPosition: '50% 50%',
-            }}
-          >
-            <Paper
+    <Box display="flex" justifyContent="center" width="100vw" alignItems={"center"} alignContent={"center"}>
+      <Box bgcolor="white" >
+        { /*Drawer for menu was here*/}
+        <Box
+          width={393}
+          height={'50vh'}
+          sx={{
+            backgroundImage: `url(${process.env.PUBLIC_URL}/static/img/rectangle-2.png)`,
+            backgroundSize: 'cover',
+            backgroundPosition: '50% 50%',
+          }}
+        >
+           <Paper
               component="form"
               sx={{
                 display: 'flex',
@@ -63,18 +58,25 @@ export const HomeScreen = () => {
                 backgroundColor: '#fbf8fd',
               }}
             >
-              <InputBase
-                sx={{ ml: 1, flex: 1 }}
-                placeholder="Search here...."
-                inputProps={{ 'aria-label': 'search' }}
-                onFocus={handleSearchFocus}
-                onBlur={handleSearchBlur}
-              />
-              <IconButton type="submit" sx={{ p: '10px' }} aria-label="search">
-                <SearchIcon />
-              </IconButton>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={goToMap}
+                sx={{
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: '28px',
+                  fontSize: '16px',
+                  fontWeight: 'bold',
+                  backgroundColor: 'white',
+                  color: 'red',
+                }}
+              >
+                Go to Map
+              </Button>
             </Paper>
           </Box>
+
 
           <Typography
             variant="body1"
@@ -90,6 +92,8 @@ export const HomeScreen = () => {
           >
             Favorite places
           </Typography>
+
+
 
           <Box
             display="flex"

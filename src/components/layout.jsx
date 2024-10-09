@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, AppBar, Toolbar, IconButton, Typography, BottomNavigation, BottomNavigationAction, Drawer, List, ListItem, ListItemText } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Typography, BottomNavigation, BottomNavigationAction, Drawer, List, ListItem, ListItemText,Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import ExploreIcon from '@mui/icons-material/Explore';
@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
                 navigate("/");
                 break;
             case 1:
-                navigate("/");
+                window.location.href = "https://www.depts.ttu.edu/housing/campus-map.pdf";
                 break;
             case 2:
                 navigate("/resources");
@@ -90,8 +90,8 @@ const Layout = ({ children }) => {
                 {children}
             </Box>
 
-            {/* Bottom Navigation */}
-            <BottomNavigation
+           {/* Bottom Navigation */}
+           <BottomNavigation
                 value={navValue}
                 onChange={handleNavChange}
                 showLabels
@@ -112,7 +112,7 @@ const Layout = ({ children }) => {
                     }}
                 />
                 <BottomNavigationAction
-                    label="Saved"
+                    label="Buildings"
                     icon={<SaveIcon />}
                     sx={{
                         color: navValue === 1 ? '#fed8d8' : '#49454f',
