@@ -5,8 +5,8 @@ import Layout from "./layout";
 const BusSchedule = () => {
   return (
     <Layout>
-      <Box display="flex" flexDirection="column" justifyContent="center" width="100vw" alignItems={"center"} alignContent={"center"}>
-        <Box position="relative" gap={20}>
+      <Box display="flex" justifyContent="center" width="100vw" alignItems={"center"} alignContent={"center"}>
+        <Box position="relative" gap={20} style={{ marginTop: 16, marginLeft: 46, marginRight: 46 }}>
           <Typography
             variant="h5"
             component="div"
@@ -63,7 +63,10 @@ const BusSchedule = () => {
             variant="body1"
             component="p"
             sx={{ fontFamily: 'Roboto', fontWeight: 'normal', color: 'grey' }}
-          > https://citibus.com/maps-and-schedules/
+          >
+            <a href="https://citibus.com/maps-and-schedules/" target="_blank" rel="noopener noreferrer" style={{ color: 'grey', textDecoration: 'none' }}>
+              https://citibus.com/maps-and-schedules/
+            </a>
           </Typography>
 
         </Box>

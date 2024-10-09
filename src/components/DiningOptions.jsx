@@ -5,8 +5,8 @@ import Layout from "./layout";
 const DiningOptions = () => {
   return (
     <Layout>
-      <Box display="flex" justifyContent="center" width="100vw">
-        <Box bgcolor="white">
+      <Box display="flex" flexDirection={'column'} justifyContent="center" width="100vw" height="100vh" alignItems={"center"} alignContent={"center"}>
+        <Box bgcolor="white" style={{ marginTop: 16, marginLeft: 46, marginRight: 46 }}>
           <Box >
             <Typography variant="h5" component="div" sx={{ fontFamily: 'Roboto', fontWeight: 'normal', color: 'black' }}>
               Dining Options
@@ -26,7 +26,9 @@ const DiningOptions = () => {
               variant="body1"
               component="p"
               sx={{ fontFamily: 'Roboto', fontWeight: 'normal', color: 'grey' }}>
-              https://www.depts.ttu.edu/hospitality/
+              <a href="https://www.depts.ttu.edu/hospitality/" target="_blank" rel="noopener noreferrer" style={{ color: 'grey', textDecoration: 'none' }}>
+                https://www.depts.ttu.edu/hospitality/
+              </a>
             </Typography>
           </Box>
         </Box>
