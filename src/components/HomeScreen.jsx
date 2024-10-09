@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import { Box, Typography, AppBar, Toolbar, IconButton, InputBase, Paper, BottomNavigation, BottomNavigationAction, Drawer, List, ListItem, ListItemText, Button } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import MenuIcon from "@mui/icons-material/Menu";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import ExploreIcon from "@mui/icons-material/Explore";
-import BookIcon from "@mui/icons-material/Book";
-import SaveIcon from "@mui/icons-material/Save";
 import { useNavigate } from "react-router-dom";
 import Layout from "./layout";
 

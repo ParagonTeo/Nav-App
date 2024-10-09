@@ -1,4 +1,3 @@
-// src/components/Layout.jsx
 import React from 'react';
 import { AppBar, Toolbar, IconButton, Typography, BottomNavigation, BottomNavigationAction, Drawer, List, ListItem, ListItemText,Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -42,12 +41,12 @@ const Layout = ({ children }) => {
     };
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', overflow: 'hidden' }}>
             {/* Drawer for the Menu */}
             <Drawer anchor="left" open={menuOpen} onClose={toggleMenu}>
                 <List>
                     <ListItem button onClick={() => navigate("/")}>
-                         <ListItemText primary="Home" />
+                        <ListItemText primary="Home" />
                     </ListItem>
                     <ListItem button onClick={() => navigate("/profile")}>
                         <ListItemText primary="Profile" />
@@ -70,7 +69,7 @@ const Layout = ({ children }) => {
                 </List>
             </Drawer>
 
-            {/* App Bar  appbar color='default', icons='inherit'*/}
+            {/* App Bar */}
             <AppBar position="static" sx={{ backgroundColor: 'white', boxShadow: 'none' }}>
                 <Toolbar>
                     <IconButton onClick={toggleMenu}>
@@ -127,7 +126,7 @@ const Layout = ({ children }) => {
                     }}
                 />
             </BottomNavigation>
-        </div>
+        </Box>
     );
 };
 
