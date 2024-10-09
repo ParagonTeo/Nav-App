@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppBar, Toolbar, IconButton, Typography, BottomNavigation, BottomNavigationAction, Drawer, List, ListItem, ListItemText,Box } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Typography, BottomNavigation, BottomNavigationAction, Drawer, List, ListItem, ListItemText, Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import ExploreIcon from '@mui/icons-material/Explore';
@@ -48,9 +48,8 @@ const Layout = ({ children }) => {
                     <ListItem button onClick={() => navigate("/")}>
                         <ListItemText primary="Home" />
                     </ListItem>
-                    <ListItem button onClick={() => navigate("/profile")}>
-                        <ListItemText primary="Profile" />
-                    </ListItem>
+                    {/*<ListItemText primary="Profile" />
+                    </ListItem>*/}
                     <ListItem button onClick={() => navigate("/map")}>
                         <ListItemText primary="Map" />
                     </ListItem>
@@ -63,9 +62,9 @@ const Layout = ({ children }) => {
                     <ListItem button onClick={() => navigate("/faq")}>
                         <ListItemText primary="FAQ" />
                     </ListItem>
-                    <ListItem button onClick={() => navigate("/settings")}>
+                    {/*<ListItem button onClick={() => navigate("/settings")}>
                         <ListItemText primary="Settings" />
-                    </ListItem>
+                    </ListItem>*/}
                 </List>
             </Drawer>
 
@@ -90,8 +89,8 @@ const Layout = ({ children }) => {
                 {children}
             </Box>
 
-           {/* Bottom Navigation */}
-           <BottomNavigation
+            {/* Bottom Navigation */}
+            <BottomNavigation
                 value={navValue}
                 onChange={handleNavChange}
                 showLabels
