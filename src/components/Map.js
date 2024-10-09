@@ -3,6 +3,7 @@ import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
 import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css';
+import { Navigate, useNavigate } from 'react-router-dom'; // Import useHistory
 
 mapboxgl.accessToken = 'pk.eyJ1IjoidGFubmVyb3dlbnMyMyIsImEiOiJjbTFpZGp1bW4wcGQxMmtwc3NmcDhoaGFnIn0.xGzAWEofvML7fSWb22kq1g';
 
@@ -25,6 +26,7 @@ const boundingBoxNE = {
 function Map() {
   const mapContainer = useRef(null);
   const directions = useRef(null);
+  const navigate = useNavigate(); // Initialize useHistory hook for navigation
   const [errorMessage, setErrorMessage] = useState(''); // Declare state for error messages
   const [userLocation, setUserLocation] = useState(null); // State for user location
 
@@ -72,10 +74,14 @@ function Map() {
       unit: 'metric',
       profile: 'mapbox/walking',
       interactive: true,
+      bbox: [boundingBoxSW.lng, boundingBoxSW.lat, boundingBoxNE.lng, boundingBoxNE.lat], // Limit to city
     });
 
     // Add directions to the map
     map.addControl(directions.current, 'top-left');
+
+    // Set origin to user's location
+    directions.current.setOrigin([userLocation.lng, userLocation.lat]);
 
     // Event listener for route updates
     directions.current.on('route', (event) => {
@@ -120,11 +126,26 @@ function Map() {
 
   return (
     <div style={{ margin: 0, padding: 0, width: '100vw', height: '100vh' }}>
-      <h2 style={{ position: 'absolute', zIndex: 1, color: 'white', backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '10px' }}>Map with Directions</h2>
+      <button
+        style={{
+          position: 'absolute',
+          top: '10px',
+          left: '325px',
+          zIndex: 10,
+          padding: '10px',
+          backgroundColor: 'white',
+          color: 'red',
+        }}
+        onClick={() => navigate('/')} // Navigate back to home on click
+      >
+        Back to Home
+      </button>
+      <h2 style={{ top: '50px', left: '325px', position: 'absolute', zIndex: 1, color: 'white', backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '10px' }}>Map with Directions</h2>
       <div ref={mapContainer} style={containerStyle} />
-      {errorMessage && <div style={{ color: 'red', zIndex: 1 }}>{errorMessage}</div>} {/* Display error message */}
+      {errorMessage && <div style={{ color: 'red', zIndex: 1 }}>{errorMessage}</div>}
     </div>
   );
 }
+
 
 export default Map;
