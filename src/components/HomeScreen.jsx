@@ -31,19 +31,19 @@ export const HomeScreen = () => {
 
   return (
     <Layout>
-    <Box display="flex" justifyContent="center" width="100vw" alignItems={"center"} alignContent={"center"}>
-      <Box bgcolor="white" >
-        { /*Drawer for menu was here*/}
-        <Box
-          width={393}
-          height={'50vh'}
-          sx={{
-            backgroundImage: `url(${process.env.PUBLIC_URL}/static/img/rectangle-2.png)`,
-            backgroundSize: 'cover',
-            backgroundPosition: '50% 50%',
-          }}
-        >
-           <Paper
+      <Box display="flex" justifyContent="center" width="100vw" alignItems={"center"} alignContent={"center"}>
+        <Box bgcolor="white" >
+          { /*Drawer for menu was here*/}
+          <Box
+            width={393}
+            height={'50vh'}
+            sx={{
+              backgroundImage: `url(${process.env.PUBLIC_URL}/static/img/rectangle-2.png)`,
+              backgroundSize: 'cover',
+              backgroundPosition: '50% 50%',
+            }}
+          >
+            {/*<Paper
               component="form"
               sx={{
                 display: 'flex',
@@ -57,24 +57,34 @@ export const HomeScreen = () => {
                 padding: '0 8px',
                 backgroundColor: '#fbf8fd',
               }}
+            > */}
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={goToMap}
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                //width: '100%',
+                //height: '100%','
+                width: 321,
+                height: 48,
+                top: 32,
+                left: 36,
+                borderRadius: '28px',
+                fontSize: '16px',
+                fontWeight: 'bold',
+                backgroundColor: 'white',
+                //color: 'black',
+                color: 'red',
+                //color: 'white',
+                //backgroundColor: 'black',
+                fontFamily: 'Roboto, Helvetica',
+              }}
             >
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={goToMap}
-                sx={{
-                  width: '100%',
-                  height: '100%',
-                  borderRadius: '28px',
-                  fontSize: '16px',
-                  fontWeight: 'bold',
-                  backgroundColor: 'white',
-                  color: 'red',
-                }}
-              >
-                Go to Map
-              </Button>
-            </Paper>
+              Go to Map {/*Get Directions */}
+            </Button>
           </Box>
 
 

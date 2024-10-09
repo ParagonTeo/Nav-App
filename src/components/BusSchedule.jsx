@@ -20,7 +20,7 @@ const BusSchedule = () => {
           <Box
             //top={170}
             //left={42}
-            width={'50vw'}
+            width={'80vw'}
             height={'50vh'}
             sx={{
               backgroundImage: `url(${process.env.PUBLIC_URL}/static/img/frame-3.png)`,
