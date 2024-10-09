@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Typography, AppBar, Toolbar, IconButton, InputBase, Paper, BottomNavigation, BottomNavigationAction, Drawer, List, ListItem, ListItemText } from "@mui/material";
+import { Box, Typography, AppBar, Toolbar, IconButton, InputBase, Paper, BottomNavigation, BottomNavigationAction, Drawer, List, ListItem, ListItemText, Button } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -20,13 +20,8 @@ export const HomeScreen = () => {
 
   const navigate = useNavigate();
 
-  // Handle search focus
-  const handleSearchFocus = () => {
-    setSearchFocus(true);
-  };
-
-  const handleSearchBlur = () => {
-    setSearchFocus(false);
+  const goToMap = () => {
+    navigate('/map'); // Assuming your map route is '/map'
   };
 
   // Handle menu toggle
@@ -42,22 +37,19 @@ export const HomeScreen = () => {
 
   return (
     <Layout>
-      <Box display="flex" justifyContent="center" width="100%">
-        <Box width={393} height={852} position="relative" bgcolor="white">
-          { /*Drawer for menu was here*/}
-          <Box
-            width={393}
-            height={431}
-            position="absolute"
-            top={64}
-            left={0}
-            sx={{
-              backgroundImage: `url(${process.env.PUBLIC_URL}/static/img/rectangle-2.png)`,
-              backgroundSize: 'cover',
-              backgroundPosition: '50% 50%',
-            }}
-          >
-            <Paper
+    <Box display="flex" justifyContent="center" width="100vw" alignItems={"center"} alignContent={"center"}>
+      <Box bgcolor="white" >
+        { /*Drawer for menu was here*/}
+        <Box
+          width={393}
+          height={'50vh'}
+          sx={{
+            backgroundImage: `url(${process.env.PUBLIC_URL}/static/img/rectangle-2.png)`,
+            backgroundSize: 'cover',
+            backgroundPosition: '50% 50%',
+          }}
+        >
+           <Paper
               component="form"
               sx={{
                 display: 'flex',
@@ -72,30 +64,36 @@ export const HomeScreen = () => {
                 backgroundColor: '#fbf8fd',
               }}
             >
-              <InputBase
-                sx={{ ml: 1, flex: 1 }}
-                placeholder="Search here...."
-                inputProps={{ 'aria-label': 'search' }}
-                onFocus={handleSearchFocus}
-                onBlur={handleSearchBlur}
-              />
-              <IconButton type="submit" sx={{ p: '10px' }} aria-label="search">
-                <SearchIcon />
-              </IconButton>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={goToMap}
+                sx={{
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: '28px',
+                  fontSize: '16px',
+                  fontWeight: 'bold',
+                  backgroundColor: 'white',
+                  color: 'red',
+                }}
+              >
+                Go to Map
+              </Button>
             </Paper>
           </Box>
+
 
           <Typography
             variant="body1"
             sx={{
-              position: 'absolute',
-              top: 513,
-              left: 39,
               fontFamily: 'Roboto, Helvetica',
               fontWeight: 'normal',
               color: 'black',
               letterSpacing: '0.5px',
               lineHeight: '24px',
+              mt: '20px',
+              ml: '10px',
             }}
           >
             Favorite places
@@ -103,14 +101,11 @@ export const HomeScreen = () => {
 
 
 
-          {/* Content */}
           <Box
             display="flex"
-            width={412}
-            height={221}
-            position="absolute"
-            top={538}
-            left={0}
+            //width={412}
+            height={'30vh'}
+            //top={538}
             padding="16px 8px"
             gap={2}
           >
@@ -133,41 +128,6 @@ export const HomeScreen = () => {
               }}
             />
           </Box>
-
-          {/* Bottom Navigation */}{/*}
-          <BottomNavigation
-            value={navValue}
-            onChange={handleNavChange}
-            showLabels
-            sx={{
-              position: 'absolute',
-              bottom: 0,
-              width: 393,
-              backgroundColor: 'white',
-            }}
-          >
-            <BottomNavigationAction
-              label="Explore"
-              icon={<ExploreIcon />}
-              sx={{
-                color: navValue === 0 ? '#fed8d8' : '#1d1b20',
-              }}
-            />
-            <BottomNavigationAction
-              label="Saved"
-              icon={<SaveIcon />}
-              sx={{
-                color: navValue === 1 ? '#fed8d8' : '#49454f',
-              }}
-            />
-            <BottomNavigationAction
-              label="Resources"
-              icon={<BookIcon />}
-              sx={{
-                color: navValue === 2 ? '#fed8d8' : '#49454f',
-              }}
-            />
-          </BottomNavigation>*/}
         </Box>
       </Box>
     </Layout>

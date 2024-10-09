@@ -1,6 +1,6 @@
 // src/components/Layout.jsx
 import React from 'react';
-import { AppBar, Toolbar, IconButton, Typography, BottomNavigation, BottomNavigationAction, Drawer, List, ListItem, ListItemText } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Typography, BottomNavigation, BottomNavigationAction, Drawer, List, ListItem, ListItemText,Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import ExploreIcon from '@mui/icons-material/Explore';
@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
                 navigate("/");
                 break;
             case 1:
-                navigate("/");
+                window.location.href = "https://www.depts.ttu.edu/housing/campus-map.pdf";
                 break;
             case 2:
                 navigate("/resources");
@@ -87,16 +87,23 @@ const Layout = ({ children }) => {
             </AppBar>
 
             {/* Main Content */}
-            <div style={{ flexGrow: 1, padding: '16px' }}>
+            <Box sx={{ flexGrow: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', width: '100%' }}>
                 {children}
-            </div>
+            </Box>
 
-            {/* Bottom Navigation */}
-            <BottomNavigation
+           {/* Bottom Navigation */}
+           <BottomNavigation
                 value={navValue}
                 onChange={handleNavChange}
                 showLabels
-                sx={{ backgroundColor: 'white', display: 'flex', width: '100vw' }}
+                sx={{
+                    backgroundColor: 'white',
+                    width: '100vw',
+                    position: 'fixed',  // Fixed positioning
+                    bottom: 0,  // Stick to the bottom
+                    left: 0,    // Ensure full width
+                    right: 0
+                }}
             >
                 <BottomNavigationAction
                     label="Explore"
@@ -106,7 +113,7 @@ const Layout = ({ children }) => {
                     }}
                 />
                 <BottomNavigationAction
-                    label="Saved"
+                    label="Buildings"
                     icon={<SaveIcon />}
                     sx={{
                         color: navValue === 1 ? '#fed8d8' : '#49454f',
